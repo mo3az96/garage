@@ -1088,6 +1088,9 @@ footer .wave img {
   .footer-nav a {
     font-size: 14px;
   }
+  html[dir=ltr] .footer-nav a {
+    font-size: 13px;
+  }
 }
 
 .footer {
@@ -1297,6 +1300,9 @@ footer .wave img {
   top: -23px;
   inset-inline-end: 0;
   z-index: 1;
+}
+html[dir=ltr] .main-img .pattern {
+  inset-inline-end: 40px;
 }
 @media (max-width: 1199px) {
   .main-img {
@@ -1572,9 +1578,15 @@ footer .wave img {
   gap: 40px 125px;
   align-items: start;
 }
+html[dir=ltr] .steps-list {
+  gap: 40px 60px;
+}
 @media (max-width: 1199px) {
   .steps-list {
     gap: 40px 60px;
+  }
+  html[dir=ltr] .steps-list {
+    gap: 40px 30px;
   }
 }
 @media (max-width: 991px) {
@@ -1629,6 +1641,9 @@ footer .wave img {
   line-height: 1.52381;
   margin: 0 0 14px;
 }
+html[dir=ltr] .step-item .step-title {
+  font-size: 18px;
+}
 .step-item .step-description {
   color: #161c2d;
   opacity: 0.7;
@@ -1660,8 +1675,9 @@ footer .wave img {
   position: absolute;
   border: 1.5px dashed #d5d7dd;
   width: 400px;
+  inset-inline-start: 50%;
   top: 36.5px;
-  transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%);
 }
 @media (max-width: 1199px) {
   .step-item:after {

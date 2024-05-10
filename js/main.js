@@ -178,4 +178,32 @@ $(document).ready(function () {
 
   /************************************ Fancybox ************************************/
   Fancybox.bind("[data-fancybox]");
+
+  var a = 0;
+  $(window).scroll(function () {
+    if ($("section").hasClass("statistics-section")) {
+      if (
+        a == 0 &&
+        $(this).scrollTop() >= $(".statistics-section").offset().top - 500
+      ) {
+        $(".statistic-value span").each(function () {
+          $(this)
+            .prop("Counter", 0)
+            .animate(
+              {
+                Counter: $(this).text(),
+              },
+              {
+                duration: 1000,
+                easing: "swing",
+                step: function (now) {
+                  $(this).text(Math.ceil(now));
+                },
+              }
+            );
+        });
+        a++;
+      }
+    }
+  });
 });
