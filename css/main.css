@@ -611,6 +611,7 @@ html[dir=rtl] .form-group .form-control::placeholder {
   gap: 5px;
   padding: 12px 13px 4px;
   padding-inline-end: 0;
+  font-family: "ping" !important;
 }
 @media (max-width: 767px) {
   .map-branch {
@@ -644,7 +645,7 @@ html[dir=rtl] .form-group .form-control::placeholder {
   }
 }
 .map-branch .branch-info {
-  padding: 0 10px;
+  padding: 0 16px;
 }
 @media (max-width: 767px) {
   .map-branch .branch-info {
@@ -670,7 +671,8 @@ html[dir=rtl] .form-group .form-control::placeholder {
   display: block;
 }
 .map-branch .branch-tools {
-  padding: 10px 0 0;
+  padding: 10px 0 5px;
+  padding-inline-end: 5px;
   border-top: 1px solid #eeeeee;
   display: flex;
   align-items: flex-start;
@@ -756,7 +758,7 @@ html[dir=rtl] .form-group .form-control::placeholder {
 }
 @media (max-width: 767px) {
   .header {
-    padding: 15px 0;
+    padding: 20px 0;
   }
 }
 .fixed .header {
@@ -774,7 +776,7 @@ html[dir=rtl] .form-group .form-control::placeholder {
 }
 @media (max-width: 767px) {
   .fixed .header {
-    padding: 7px 0;
+    padding: 15px 0;
   }
 }
 
@@ -801,7 +803,7 @@ html[dir=rtl] .form-group .form-control::placeholder {
 }
 @media (max-width: 767px) {
   .logo {
-    height: 35px;
+    height: 40px;
   }
 }
 .fixed .logo {
@@ -814,7 +816,7 @@ html[dir=rtl] .form-group .form-control::placeholder {
 }
 @media (max-width: 767px) {
   .fixed .logo {
-    height: 25px;
+    height: 35px;
   }
 }
 
@@ -1057,6 +1059,8 @@ footer {
 }
 footer .wave {
   width: 100%;
+  display: flex;
+  transform: translateY(1px);
 }
 footer .wave img {
   width: 100%;
@@ -1104,16 +1108,15 @@ footer .wave img {
 }
 
 .footer-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .footer-content {
-    flex-direction: column-reverse;
-    gap: 25px;
+    grid-template-columns: 1fr;
+    gap: 20px;
     text-align: center;
-    justify-content: center;
   }
 }
 
@@ -1124,12 +1127,23 @@ footer .wave img {
   line-height: 1.857143;
   margin: 0;
 }
+@media (max-width: 991px) {
+  .copyright {
+    order: 2;
+  }
+}
 
 .socials {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 8px;
+}
+@media (max-width: 991px) {
+  .socials {
+    justify-content: center;
+    order: 1;
+  }
 }
 
 .social {
@@ -1148,6 +1162,24 @@ footer .wave img {
   background-color: #8e2de2;
   border-color: #8e2de2;
   color: #fff;
+}
+
+.tahaqom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.tahaqom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+@media (max-width: 991px) {
+  .tahaqom {
+    order: 3;
+  }
 }
 
 .main-section {
