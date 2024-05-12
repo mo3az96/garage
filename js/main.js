@@ -128,35 +128,32 @@ $(document).ready(function () {
     },
     grabCursor: true,
     loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     centeredSlides: true,
     centeredSlidesBounds: true,
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 5,
-      depth: 50,
-      modifier: 1.4,
-      slideShadows: false,
-    },
     breakpoints: {
       0: {
-        slidesPerView: 1.3,
-        spaceBetween: 10,
-        effect: false,
+        slidesPerView: 1.5,
+        spaceBetween: 20,
       },
-      400: {
-        slidesPerView: 2,
+      576: {
+        slidesPerView: 2.65,
+        spaceBetween: 20,
       },
-      767: {
+      768: {
         slidesPerView: 3,
+        spaceBetween: 20,
       },
       992: {
-        slidesPerView: "auto",
-        spaceBetween: 18,
-        effect: "coverflow",
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1199: {
+        slidesPerView: 4.3,
+        spaceBetween: 25,
       },
     },
 

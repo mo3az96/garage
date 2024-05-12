@@ -297,7 +297,7 @@ html[dir=ltr] select {
 }
 .app-section .section-head {
   gap: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 @media (max-width: 991px) {
   .section-head {
@@ -457,6 +457,7 @@ html[dir=ltr] .slider-content .swiper-btn i {
 }
 
 .app-section .slider-pagination.swiper-pagination-bullets {
+  margin-top: 45px;
   height: 12px;
 }
 .app-section .slider-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
@@ -2043,6 +2044,7 @@ html[dir=ltr] .step-item .step-title {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 14px;
   padding: 14px;
   border-radius: 20px;
@@ -2083,21 +2085,74 @@ html[dir=ltr] .step-item .step-title {
   padding: 42px 0 61px;
   overflow: hidden;
 }
-@media (max-width: 1199px) {
-  .app-section .swiper {
-    overflow: unset;
-  }
+.app-section .swiper {
+  overflow: unset;
 }
 
-.app-slider .swiper-wrapper {
-  align-items: center;
+.app-slider .swiper-slide-active .screen-item {
+  box-shadow: none;
+  visibility: visible;
+  opacity: 1;
 }
-@media (min-width: 992px) {
-  .app-slider .swiper-slide {
-    width: 245px;
+.app-slider .swiper-slide-active .screen-img {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.app-slider .swiper-slide-next .screen-item,
+.app-slider .swiper-slide-prev .screen-item {
+  visibility: visible;
+  opacity: 1;
+}
+.app-slider .swiper-slide-next .screen-img,
+.app-slider .swiper-slide-prev .screen-img {
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 1199px) {
+  .app-slider .swiper-slide-next .screen-img,
+  .app-slider .swiper-slide-prev .screen-img {
+    opacity: 0.5;
   }
-  .app-slider .swiper-slide.swiper-slide-active {
-    width: 319px;
+}
+.app-slider .swiper-slide-next + .swiper-slide .screen-item {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(75px);
+  z-index: 1;
+}
+html[dir=ltr] .app-slider .swiper-slide-next + .swiper-slide .screen-item {
+  transform: translateX(-75px);
+}
+@media (max-width: 991px) {
+  .app-slider .swiper-slide-next + .swiper-slide .screen-item {
+    transform: none;
+  }
+  html[dir=ltr] .app-slider .swiper-slide-next + .swiper-slide .screen-item {
+    transform: none;
+  }
+}
+.app-slider .swiper-slide:has(+ .swiper-slide-prev) .screen-item {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-75px);
+  z-index: 1;
+}
+html[dir=ltr] .app-slider .swiper-slide:has(+ .swiper-slide-prev) .screen-item {
+  transform: translateX(75px);
+}
+@media (max-width: 991px) {
+  .app-slider .swiper-slide:has(+ .swiper-slide-prev) .screen-item {
+    transform: none;
+  }
+  html[dir=ltr] .app-slider .swiper-slide:has(+ .swiper-slide-prev) .screen-item {
+    transform: none;
+  }
+}
+@media (max-width: 480px) {
+  .app-slider {
+    width: 345px;
+    margin: 0 auto;
   }
 }
 
@@ -2107,7 +2162,10 @@ html[dir=ltr] .step-item .step-title {
   border-radius: 30px;
   background-color: #fdfdff;
   width: 100%;
-  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
 }
 .screen-item .screen-img {
   width: 100%;
@@ -2123,25 +2181,40 @@ html[dir=ltr] .step-item .step-title {
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media (max-width: 991px) {
-  .screen-item .screen-img {
-    aspect-ratio: 319/622;
+@media (max-width: 767px) {
+  .screen-item {
+    border-radius: 20px;
   }
 }
-.swiper-slide-active .screen-item {
-  box-shadow: none;
-}
-.swiper-slide-active .screen-item .screen-img {
+
+.mockup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 9;
+  width: 285px;
   aspect-ratio: 319/622;
-  opacity: 1;
-  pointer-events: all;
+  pointer-events: none;
 }
-.swiper-slide-next .screen-item .screen-img, .swiper-slide-prev .screen-item .screen-img {
-  opacity: 1;
+@media (max-width: 1199px) {
+  .mockup {
+    width: 243px;
+  }
 }
 @media (max-width: 991px) {
-  .swiper-slide-next .screen-item .screen-img, .swiper-slide-prev .screen-item .screen-img {
-    opacity: 0.5;
+  .mockup {
+    width: 242px;
+  }
+}
+@media (max-width: 767px) {
+  .mockup {
+    width: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .mockup {
+    width: 250px;
   }
 }
 
